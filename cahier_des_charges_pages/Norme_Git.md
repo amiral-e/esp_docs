@@ -34,8 +34,6 @@ Son nom correspond à l'issue linear à laquelle elle répond, cela permet l'aut
 
 **Commit :**
 
-- <type> : <message>
-
 **Type :**
 
 | type | description |
