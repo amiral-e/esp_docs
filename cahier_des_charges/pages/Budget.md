@@ -95,10 +95,34 @@ Voici les informations de nos modèles dans cet abonnement :
 | --- | --- | --- | ---  |
 | llama-3.3-70b-versatile | 0.59$ | 0.79$ | 128k
 
+Le budget moyen est de ...
+
 ---
 
 ### **OpenAi**
 
+Nous utilisons l'abonnement (pay as you go).
+
+Les abonnements possibles :
+
+| modèle | Prix par 1M Token |
+| --- | --- |
+| text-embedding-ada-002 | 0.10$ |
+
+Le budget moyen est de ...
+
 ---
 
 ### **Stripe**
+
+Nous utilisons l'abonnement standard.
+
+Les abonnements possibles :
+
+| abonnement | Prix par transaction |
+| --- | --- |
+| Offre standard | 1,5 % + 0,25 € |
+
+Le budget moyen est de ...
+
+> Le prix par transaction est défini pour les cartes standard de l'Espace économique européen.
