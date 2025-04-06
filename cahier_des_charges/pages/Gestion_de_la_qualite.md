@@ -22,9 +22,11 @@ La stratégie que nous avons adopté est la suivante :
 
 ### **Tests et outils**
 
-Pour garantir une meilleure stabilité lors du développement, nous mettrons en place une batterie de tests avec un coverage de 70%, qui seront exécutés à chaque merge vers la branche dev, conformément à la norme git. Cette démarche a pour objectif de détecter et corriger rapidement les potentielles régressions ou bugs introduits par les nouvelles modifications, avant même qu'elles n'atteignent l'environnement de production. En automatisant ces tests, nous nous assurons que chaque modification intégrée respecte les critères de qualité définis et maintient l'intégrité du projet.
+Pour garantir une meilleure stabilité lors du développement, nous mettrons en place une batterie de tests pour couvrir un maximum de coverage, qui seront exécutés à chaque merge vers la branche dev, conformément à la norme git. Cette démarche a pour objectif de détecter et corriger rapidement les potentielles régressions ou bugs introduits par les nouvelles modifications, avant même qu'elles n'atteignent l'environnement de production. En automatisant ces tests, nous nous assurons que chaque modification intégrée respecte les critères de qualité définis et maintient l'intégrité du projet.
 
 En parallèle, nous allons intégrer l'outil [Bruno](https://www.usebruno.com/) pour créer et gérer une collection de routes. Cet outil nous permettra de centraliser et synchroniser nos tests des différentes routes sur les divers dépôts. En utilisant Bruno, nous faciliterons la cohérence et la couverture de nos tests, garantissant ainsi que toutes les routes sont rigoureusement vérifiées et fonctionnent comme prévu sur l'ensemble de nos environnements de développement et de production.
+
+> Nous n'utilisons plus Bruno, nous testons les routes via la page /docs Scalar.
 
 Pour assurer la stabilité de notre environnement de production, nous avons mis en place une procédure stricte de vérification des tests unitaires avant tout (re)déploiement de service. Concrètement, cela signifie qu'aucun service ne sera (re)déployé si un test unitaire échoue. Cette politique rigoureuse nous permet de prévenir les incidents en production et d'assurer une qualité constante des services déployés.
 
@@ -46,12 +48,20 @@ Au début du projet, l'interface utilisateur (UI) et l'expérience utilisateur (
 
 Pour assurer la validité des données entrantes et sortantes de nos routes, nous utiliserons la bibliothèque **Zod**. Cette bibliothèque permet de définir des schémas de validation stricts, garantissant que les données manipulées par notre API respectent les formats attendus. Chaque route de notre application sera conçue conformément aux spécifications **d'OpenAPI**, un standard bien établi pour la documentation et la description des API RESTful. En suivant ce format, nous  intégrerons **Swagger-UI**, un outil puissant qui offre une interface utilisateur interactive. Swagger-UI permettra non seulement de visualiser les différentes routes de notre API, mais aussi de les tester directement et de générer une documentation complète et à jour. Cette approche facilitera le développement, la maintenance et l'utilisation de notre API par les développeurs et autres parties prenantes.
 
+> Zod n'est plus utilisé pour la vérification des inputs/outputs des routes.
+
+> Swagger a été remplacé par Scalar
+
 ---
 
 ### **Backend IA**
 
 Chaque route de notre application sera conçue conformément aux spécifications **d'OpenAPI**, un standard bien établi pour la documentation et la description des API RESTful. En suivant ce format, nous  intégrerons **Swagger-UI**, un outil puissant qui offre une interface utilisateur interactive. Swagger-UI permettra non seulement de visualiser les différentes routes de notre API, mais aussi de les tester directement et de générer une documentation complète et à jour. Cette approche facilitera le développement et la maintenance de notre API.
 
+> Nous n'utilisons plus de backend ia, la logique a été implémenté directement dans le backend principal.
+
 Pour garantir à la fois les performances et le degré de précision de notre système, nous procéderons à une évaluation rigoureuse des résultats produits par notre mécanisme de recherche, également appelé 'retriever'. Cette évaluation consistera à mesurer et analyser divers indicateurs de performance, tels que la rapidité des réponses, la pertinence des résultats, et d'autres métriques spécifiques à notre contexte d'utilisation. Une fois ces évaluations effectuées, il sera crucial d'intégrer ces processus d'évaluation dans notre pipeline d'intégration continue et de déploiement continu (CI/CD).
+
+> Les système prompts ont été modifié de sorte à ce que l'assistant évite les documents erronés trouvés lors des recherches.
 
 En incorporant ces évaluations dans notre pipeline CI/CD, nous pourrons automatiser le processus de validation. Concrètement, avant chaque déploiement vers l'environnement de production de notre backend IA, les résultats des évaluations serviront de critères pour décider si le déploiement peut se faire ou non. Cette automatisation assurera que seuls les versions du backend IA qui répondent à nos standards de performance et de précision atteignent la production, réduisant ainsi les risques de défaillances et améliorant la fiabilité globale de notre système.
