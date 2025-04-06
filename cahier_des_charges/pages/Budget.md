@@ -2,7 +2,7 @@
 
 ### **Railway (ancien outil)**
 
->N'est plus utiliser cf nouvelle plateforme utilisée "Fly.io"
+>N'est plus utiliser (cf nouvelle plateforme utilisée "Fly.io")
 
 Pour Railway et dans le cadre du projet nous allons utiliser l’abonnement **Hobby** à 5$ par mois avec les 5$ offerts par mois. Tous les services bénéficient de 8 GB RAM et 8 vCPU.
 
