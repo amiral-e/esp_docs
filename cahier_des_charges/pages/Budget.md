@@ -17,12 +17,13 @@ Les ressources en dev seront en auto sleep.
 Pour Fly.io 
  
 
-Les deux abonnements bénéficient de :
+Les abonnements potentiels :
 
-| abonnement | utilisateurs mensuels | stockage database | stockage fichiers | bandwidth | Backup journaliers |
-| --- | --- | --- | --- | --- | --- |
-| gratuit | 50,000 | 500 MB | 1 GB | 5 GB | non |
-| pro | 100,000 | 8 GB | 100 GB | 250 GB | oui |
+| CPU (core) | RAM | type | usage | prix |
+| --- | --- | --- | --- | --- |
+| 2 | 2 GB | shared | moyenne/haute | 11.39 $ |
+| 2 | 4 GB | private | moyenne/haute | 21.40 $ |
+| 4 | 4 GB | private | moyenne/haute | 22.78 $ |
 
 ---
 
