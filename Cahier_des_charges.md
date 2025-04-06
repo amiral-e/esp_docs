@@ -1,7 +1,5 @@
 # Cahier des charges
 
-Created by: Matteo Linzi
-
 ### Sommaire :
 
 [Présentation du projet (quoi ?)](cahier_des_charges_pages/Presentation_du_projet_quoi.md)
