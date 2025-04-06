@@ -12,6 +12,20 @@ Les ressources en dev seront en auto sleep.
 
 ---
 
+### **Fly.io**
+
+Pour Fly.io 
+ 
+
+Les deux abonnements bénéficient de :
+
+| abonnement | utilisateurs mensuels | stockage database | stockage fichiers | bandwidth | Backup journaliers |
+| --- | --- | --- | --- | --- | --- |
+| gratuit | 50,000 | 500 MB | 1 GB | 5 GB | non |
+| pro | 100,000 | 8 GB | 100 GB | 250 GB | oui |
+
+---
+
 ### **Supabase**
 
 Pour Supabase et dans le cadre du projet nous allons utiliser l’abonnement gratuit (à vérifier et tester). Nous allons l’utiliser pour stocker les utilisateurs, les données de l’application et les embeddings du backend ia.
