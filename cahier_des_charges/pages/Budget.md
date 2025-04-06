@@ -20,11 +20,11 @@ Pour Fly.io
 
 Les abonnements possibles :
 
-| CPU (core) | RAM | type | usage | prix |
-| --- | --- | --- | --- | --- |
-| 2 | 2 GB | shared | moyenne/haute | 11.39 $ |
-| 2 | 4 GB | shared | moyenne/haute | 21.40 $ |
-| **4** | **4 GB** | **shared** | **moyenne/haute** | **22.78 $** |
+| offre | CPU (core) | RAM | type | usage | prix |
+| --- | --- | --- | --- | --- | --- |
+| 1 | 2 | 2 GB | shared | moyenne/haute | 11.39 $ |
+| 2 | 2 | 4 GB | shared | moyenne/haute | 21.40 $ |
+| 3 | **4** | **4 GB** | **shared** | **moyenne/haute** | **22.78 $** |
 
 Le choix de l'abonnement pour l'hébergement de notre application se porte sur l'abonnement à 22.78 $ par mois;
 En effet cette offre comprend plusieurs éléments qui cadre correctement avec nos besoins,    
