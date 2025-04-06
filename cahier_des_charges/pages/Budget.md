@@ -1,8 +1,8 @@
 # Budget
 
-### **Railway**
+### **Railway (ancien outil)**
 
-> Pour Railway et dans le cadre du projet nous allons utiliser l’abonnement **Hobby** à 5$ par mois avec les 5$ offerts par > mois. Tous les services bénéficient de 8 GB RAM et 8 vCPU.
+> Pour Railway et dans le cadre du projet nous allons utiliser l’abonnement **Hobby** à 5$ par mois avec les 5$ offerts par mois. Tous les services bénéficient de 8 GB RAM et 8 vCPU.
 
 > Dans un cadre réel et pour bénéficier de machines plus puissantes et de régions, le déploiement en prod devrait être fait > sur l’abonnement **Pro** à 20$ par mois et par utilisateur. Tous les services auraient bénéficier de 32 GB RAM et 32 vCPU.
 
