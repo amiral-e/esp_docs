@@ -2,21 +2,22 @@
 
 ### **Railway (ancien outil)**
 
-> Pour Railway et dans le cadre du projet nous allons utiliser l’abonnement **Hobby** à 5$ par mois avec les 5$ offerts par mois. Tous les services bénéficient de 8 GB RAM et 8 vCPU.
+>N'est plus utiliser cf nouvelle plateforme utilisée "Fly.io"
 
-> Dans un cadre réel et pour bénéficier de machines plus puissantes et de régions, le déploiement en prod devrait être fait sur l’abonnement **Pro** à 20$ par mois et par utilisateur. Tous les services auraient bénéficier de 32 GB RAM et 32 vCPU.
+Pour Railway et dans le cadre du projet nous allons utiliser l’abonnement **Hobby** à 5$ par mois avec les 5$ offerts par mois. Tous les services bénéficient de 8 GB RAM et 8 vCPU.
 
-> Les couts sur Railway dépendent de l’usage. Pour réduire les couts il est possible d’activer l’app sleeping à des 
-> ressources, ce qui permet de les mettre en veille lorsqu’elle ne sont pas utilisées.
+Dans un cadre réel et pour bénéficier de machines plus puissantes et de régions, le déploiement en prod devrait être fait sur l’abonnement **Pro** à 20$ par mois et par utilisateur. Tous les services auraient bénéficier de 32 GB RAM et 32 vCPU.
 
-> Les ressources en dev seront en auto sleep. 
+Les couts sur Railway dépendent de l’usage. Pour réduire les couts il est possible d’activer l’app sleeping à des 
+ressources, ce qui permet de les mettre en veille lorsqu’elle ne sont pas utilisées.
+
+Les ressources en dev seront en auto sleep. 
 
 ---
 
 ### **Fly.io**
 
-Pour Fly.io 
- 
+>Nouvelle plateforme utilisée 
 
 Les abonnements possibles :
 
