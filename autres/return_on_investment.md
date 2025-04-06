@@ -8,7 +8,14 @@ Le Return on Investment (ROI) est un indicateur clé pour évaluer l'efficacité
 
 ### Etude de marché
 
+**Nos concurrent :** 
 
+| plateform | fonctionnalités | Prix (mois)|
+| --- | --- | --- |
+| Humata | Ingestion de page de document | / |
+| Juribot | ChatIA (entrainer sur du droit) | / |
+| sinao | Devis illimités, Suivi des paiements, Facturation électronique, Déclaration et paiement TVA, Suivi financier | 11,40 € |
+| LegiGPT | ChatIA (entrainer sur du droit)  | / |
 
 ---
 
