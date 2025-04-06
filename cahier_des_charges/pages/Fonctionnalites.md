@@ -434,11 +434,11 @@ Les projets sont séparés par des milestones à des dates précises. Les tâche
 
 La roadmap est accéssible sur [notre Linear](https://linear.app/esp-cc/projects/all).
 
-![Screenshot 2024-07-07 223140.png](Screenshot_2024-07-07_223140.png)
+![Roadmap.png](images/Roadmap.png)
 
 Les tâches sont réparties dans des cycles correspondants à nos sprints.
 
-![Untitled](Untitled.png)
+![Cycles](images/Cycles.png)
 
 ### Assignation
 

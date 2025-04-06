@@ -2,7 +2,7 @@
 
 ---
 
-![schéma de l’infra générale](Infrastructure_Docker.png)
+![schéma de l’infra générale](images/Infrastructure_Docker.png)
 
 schéma de l’infra générale
 

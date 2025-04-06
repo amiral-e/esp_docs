@@ -16,22 +16,6 @@ Listes de sources de données possibles (**lois/droit/réglementations**) :
 
 Listes de sources de données possibles (**cours**) :
 
-- ?
-
-Données potentielles trouvées :
-
-Elles sont disponnibles sur [notre onedrive](https://epitechfr-my.sharepoint.com/:f:/g/personal/matteo_linzi_epitech_eu/EgUaFNNEfVdKkFngk_vkbcYBEh__WTZdqiM7JBRuDXWsIw?e=u7W337).
-
-![Untitled](Untitled%201.png)
-
-- Cours en anglais
-    
-    ![Untitled](Untitled%202.png)
-    
-- Cours en français
-    
-    ![Untitled](Untitled%203.png)
-    
-- Droit français
-    
-    ![Untitled](Untitled%204.png)
+- [cours en anglais](https://github.com/amiral-e/esp_data/tree/main/old_source/cours_anglais)
+- [cours en français](https://github.com/amiral-e/esp_data/tree/main/old_source/cours_francais)
+- [droit français](https://github.com/amiral-e/esp_data/tree/main/old_source/droit_francais)
