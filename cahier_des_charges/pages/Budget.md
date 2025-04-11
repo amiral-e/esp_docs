@@ -123,6 +123,4 @@ Les abonnements possibles :
 | --- | --- |
 | Offre standard | 1,5 % + 0,25 € |
 
-Le budget moyen est de ...
-
 > Le prix par transaction est défini pour les cartes standard de l'Espace économique européen.
