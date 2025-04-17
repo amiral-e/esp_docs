@@ -1,4 +1,4 @@
-CONDITIONS GÉNÉRALES D’UTILISATION (CGU)
+## CONDITIONS GÉNÉRALES D’UTILISATION (CGU)
 
 1. Objet
 Les présentes Conditions Générales d’Utilisation (ci-après les « CGU ») ont pour objet de définir les modalités d’accès et d’utilisation de l’application ComptaCompanion (ci-après « l’Application »), un service d’analyse et de conseil financier et comptable basé sur l’intelligence artificielle (LLM).
