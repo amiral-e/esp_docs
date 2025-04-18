@@ -1,10 +1,10 @@
 ### Documents réalisés au cours du projet ESP :
 
-[Cahier Des Charges](cahier_des_charges/readme.md)
+[Cahier Des Charges](cahier_des_charges/)
 
-[Recrutement](recrutement/readme.md)
+[Recrutement](recrutement/)
 
-[Law](law/readme.md)
+[Law](law/)
 
 [Definition of Done](autres/definition_of_done.md)
 
