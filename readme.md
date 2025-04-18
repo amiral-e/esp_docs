@@ -5,3 +5,7 @@
 [Recrutement](recrutement/readme.md)
 
 [Law](law/readme.md)
+
+[Definition of Done](autres/definition_of_done.md)
+
+[Return on Investment](autres/return_on_investment.md)
