@@ -4,7 +4,7 @@
 
 Le Return on Investment (ROI) est un indicateur clé pour évaluer l'efficacité des investissements. Il mesure le rapport entre le bénéfice généré par notre projet ou une action et le coût initial engagé. En d'autres termes, le ROI permet de savoir si un investissement rapporte plus qu'il ne coûte, en exprimant ce résultat sous forme de pourcentage. Ce document présente une approche pratique pour calculer et optimiser le ROIs.
 
-Avant toutes choses il est important de comprendre et de définir ce qui représente nos coût fixe qui sont défini dans la ressource [Buget](esp_docs/cahier_des_charges/pages/Budget.md) et la méthodologie de calcul de nos revenus nets. En effet sachat que notre application fait appel à des services externes payant qui sont facturer à l'utilisation, il est primordiale de connaitre et/ou estimer l'utilisation de chaque typologie d'utilisateur.   
+Avant toutes choses il est important de comprendre et de définir ce qui représente nos coût fixe qui sont défini dans la ressource [Buget](../cahier_des_charges/pages/Budget.md) et de calcul de nos **revenus bruts** et par la suite nos **revenus nets**. En effet sachant que notre application fait appel à des services externes payant qui sont facturer à l'utilisation, il est primordiale de connaitre et/ou estimer l'utilisation de chaque typologie d'utilisateur.   
  
 ---
 
@@ -91,19 +91,21 @@ L'étude de marché vise à situer notre application dans un ecosystème déjà 
 
 ## **Utilisations**
 
-Ici l'objectif est de définir le fonctionnement des éléments payants de l'application, et de comprendre les différentes utilisations issue de nos typologie d'utilisateur. Tout d'abbord ComptaCompanion permet de choisir un niveau de connaissance qui correspond au format de retour de l'ia plus ou moins détaille et complexe en fonction du niveau choisi ()
+Ici l'objectif est de définir le fonctionnement des éléments payants de l'application, et de comprendre les différentes utilisations issue de nos typologie d'utilisateur.
 
 ### **Niveaux de connaissances**
 
+ Tout d'abbord ComptaCompanion permet de choisir un niveau de connaissance qui correspond au format de retour de l'IA plus ou moins détaillé et complexe en fonction du niveau choisi par l'utilisateur.
+
 | cible | niveau de connaissance |
 | --- | --- |
-| particulier | beginner,   |
-| autoentrepreneur | utilise l'application dans le cadre de ses activités professionelle (gestion, impôt, développement) | ingestion de documents, chat sur des documents et sur les connaissances de la plateforme, générations de rapports |
-| PME |  utilise l'application dans le cadre de ses activités professionelle | chat sur les connaissances de la plateforme, chat sur les documents personel non soumis aux restrictions de l'entreprise, générations de rapports |
+| particulier | beginner/intermediate |
+| autoentrepreneur | intermediate/pro |
+| PME |  pro |
 
 ### **Questions prédéfinis**
 
-Notre application comporte des niveaux de connaissances qui permettent d'adapter le contenu de la réponse en fonction du niveau de l'utilisateur sur le sujet, beginner, intermediate et pro ainsi que des questions prédéfinis en fonction de niveau chaque utilisateur.
+ComptaCompanion propose également en fonction du niveau de connaissance des questions type accessible via le chat, qui nous permettent d'estimer "la charge de dialogue" entre un utilisateur et le modèle. 
 
 ***Question Beginner :*** 
 
@@ -139,77 +141,84 @@ Notre application comporte des niveaux de connaissances qui permettent d'adapter
 
 ## **Utilsation estimer par typologie d'utilisateur** 
 
+Un élement qu'il est important de noter est que les frais générés par notre commnication au modèle Groq sont relative aux nombres de tokens (1 token = 4 caractères) envoyé (Input) par l'utilisateur et renvoyé par le modèle (output)
+(voir [Buget](../cahier_des_charges/pages/Budget.md))
+
+Nous allons donc ici estimer des moyennes d'utilisation en nombre de caractères pour pouvoir ensuite les convertir en dollars.
+
 ### **Questions**
 
 ***Question Beginner :*** 
 
-"Quelle est la différence entre actif et passif ?" → 48 caractères
+1. "Quelle est la différence entre actif et passif ?" → 48 caractères
 
-"Comment calculer le seuil de rentabilité d’une entreprise ?" → 61 caractères
+2. "Comment calculer le seuil de rentabilité d’une entreprise ?" → 61 caractères
 
-"Quels sont les ratios financiers les plus utilisés ?" → 50 caractères
+3. "Quels sont les ratios financiers les plus utilisés ?" → 50 caractères
 
-"C’est quoi une écriture comptable d’amortissement ?" → 53 caractère
+4. "C’est quoi une écriture comptable d’amortissement ?" → 53 caractère
 
 (48+61+50+53)/4 = 53 caractères par question en moyenne 
 
 | Question | Taille estimée de la réponse |
 |---|---|
-| Actif vs Passif | 200 caractères |
-| Seuil de rentabilité | 275 caractères |
-| Ratios financiers | 225 caractères |
-| Écriture d’amortissement | 250 caractères |
+| 1. Actif vs Passif | 200 caractères |
+| 2. Seuil de rentabilité | 275 caractères |
+| 3. Ratios financiers | 225 caractères |
+| 4. Écriture d’amortissement | 250 caractères |
 
 (200+275+225+250)/4 = 237 caractères par réponse en moyenne
 
 ***Question Intermediate :*** 
 
-"Comment comptabiliser une variation de stock en fin d’exercice selon le PCG ?" → 84 caractères
+1. "Comment comptabiliser une variation de stock en fin d’exercice selon le PCG ?" → 84 caractères
 
-"Quelle est la méthode de calcul du coût de revient en comptabilité analytique ?" → 84 caractères
+2. "Quelle est la méthode de calcul du coût de revient en comptabilité analytique ?" → 84 caractères
 
-"Comment interpréter un ratio d’endettement supérieur à 100 % dans une PME ?" → 91 caractères
+3. "Comment interpréter un ratio d’endettement supérieur à 100 % dans une PME ?" → 91 caractères
 
-"Dans quel compte enregistre-t-on une charge constatée d’avance en comptabilité ?" → 86 caractères
+4. "Dans quel compte enregistre-t-on une charge constatée d’avance en comptabilité ?" → 86 caractères
 
 (84+84+91+86)/4 = 86 caractères par question en moyenne 
 
 | Sujet | Taille estimée de la réponse |
 |---|---|
-| Variation de stock selon le PCG | ~300 caractères |
-| Calcul du coût de revient | ~275 caractères |
-| Ratio d’endettement > 100 % | ~300 caractères |
-| Charge constatée d’avance | ~250 caractères |
+| 1. Variation de stock selon le PCG | 300 caractères |
+| 2. Calcul du coût de revient | 275 caractères |
+| 3. Ratio d’endettement > 100 % | 300 caractères |
+| 4. Charge constatée d’avance | 250 caractères |
 
 (300+275+300+250)/4 = 281 caractères par réponse en moyenne 
 
 ***Question Pro :*** 
 
-"Comment comptabiliser une cession d'immobilisation avec une plus-value selon les règles fiscales françaises ?"
+1. "Comment comptabiliser une cession d'immobilisation avec une plus-value selon les règles fiscales françaises ?"
 -> 120 caractères
 
-"Dans un rapprochement bancaire, comment traiter une écriture d’écart non justifiée datant de plus de 6 mois ?"
+2. "Dans un rapprochement bancaire, comment traiter une écriture d’écart non justifiée datant de plus de 6 mois ?"
 -> 125 caractères
 
-"Quels sont les impacts comptables d’un crédit-bail sur le bilan et le compte de résultat selon les normes IFRS 16 ?"
+3. "Quels sont les impacts comptables d’un crédit-bail sur le bilan et le compte de résultat selon les normes IFRS 16 ?"
 -> 132 caractères
 
-"Comment ventiler les charges indirectes dans une comptabilité analytique selon la méthode des centres d’analyse ?"
+4. "Comment ventiler les charges indirectes dans une comptabilité analytique selon la méthode des centres d’analyse ?"
 -> 122 caractères
 
 (84+84+91+86)/4 = 124 caractères par question en moyenne 
 
 | Sujet                                                                           | Taille estimée de la réponse |
 |---------------------------------------------------------------------------------|------------------------------|
-| Cession d'immobilisation avec plus-value (règles fiscales FR)                   | 450 caractères               |
-| Traitement d’une écriture d’écart non justifiée dans un rapprochement bancaire  | 400 caractères               |
-| Crédit-bail et impacts comptables selon IFRS 16                                 | 500 caractères               |
-| Ventilation des charges indirectes par centre d’analyse (méthode analytique)    | 450 caractères               |
+| 1. Cession d'immobilisation avec plus-value (règles fiscales FR)                   | 450 caractères               |
+| 2. Traitement d’une écriture d’écart non justifiée dans un rapprochement bancaire  | 400 caractères               |
+| 3. Crédit-bail et impacts comptables selon IFRS 16                                 | 500 caractères               |
+| 4. Ventilation des charges indirectes par centre d’analyse (méthode analytique)    | 450 caractères               |
  
 
 (400+450+500+400)/4 = 450 caractères par réponse en moyenne 
 
 ### **Ingéstion de documents**
+
+Il faut également noter que nous utilisons pour OpenIA pour l'ingestion de document, le prix est également relatif au nombre de tokens envoyés (1 token = 4 caractères)  (voir [Buget](../cahier_des_charges/pages/Budget.md))
 
 | Profil utilisateur | Type de documents ingérables                                  | Taille estimée (caractères) | Nombre moyen de caractères | Nombre estimé de pages |
 |--------------------|---------------------------------------------------------------|-----------------------------|----------------------------|------------------------|
@@ -218,6 +227,8 @@ Notre application comporte des niveaux de connaissances qui permettent d'adapter
 | Pro                | Normes (PCG, IFRS), rapports financiers, procédures internes  | 6 000 à 15 000+             | 10 500                     | 5 à 7 pages            |
 
 ### **Génération de rapports**
+
+La génération de rapports fonctionne de la même manière que le chat (groq) les tarrifications sont donc identitque (1 token = 4 caractères)  (voir [Buget](../cahier_des_charges/pages/Budget.md))
 
 | Type de rapport généré                                    | Profil cible       | Taille estimée (caractères) | Taille moyenne estimée | Taille estimée (pages) |
 |-----------------------------------------------------------|--------------------|-----------------------------|------------------------|------------------------|
@@ -234,13 +245,14 @@ Notre application comporte des niveaux de connaissances qui permettent d'adapter
 | Intermédiaire      | 86                            | 281                                 | 4 500                               | 2 250                              |
 | Pro                | 574                           | 450                                 | 10 500                              | 6 000                              |
 
-En supposant que la répartition des utilisateurs est uniforme nous avons 
+En supposant que la répartition des utilisateurs est uniforme nous avons :  
+(Ici nous faisons la moyenne par fonctionalités)
 
 | nombre total de caractères (questions)/mois | nombre total de caractères (réponses)/mois | nombre total de caractères (documents)/mois | nombre total de caactères (rapports)/mois |
 |---------------------------------------------|--------------------------------------------|---------------------------------------------|-------------------------------------------|
-| 713                                         | 968                                        | 17 000                                      | 9250                                      |
+| 238                                         | 323                                        | 5667                                      | 3084                                      |
 
-Une fois le nombre de caractère par fonctionnalités et par typologie estimé, il est important de réussir à comprendre la féquence d'utilisation pour nos trois persona.
+Une fois le nombre de caractère par fonctionnalités et par typologie d'utilisateur estimé, il est important de réussir à comprendre la féquence d'utilisation pour nos trois persona. (source pour l'estimation en annexe)
 
 | Typologie      | Questions posées/mois | Réponses générées/mois | Documents ingérés/mois | Rapports générés/mois |
 |----------------|-----------------------|------------------------|------------------------|-----------------------|
@@ -248,30 +260,89 @@ Une fois le nombre de caractère par fonctionnalités et par typologie estimé, 
 | Intermédiaire  | 160                   | 160                    | 7.5                    | 6                     |
 | Pro            | 300                   | 300                    | 22.5                   | 15                    |
 
-En supposant que la répartition des utilisateurs est uniforme nous avons 
+En supposant que la répartition des utilisateurs est uniforme nous avons : 
+(Ici est calculer la moyenne du nombres d'utilisations de chaque fonctionnalité)
 
 | nombre total de questions posées/mois | nombre total de réponses générées/mois | nombre total de documents ingérés/mois | nombre total de rapports générés/mois |
 |---------------------------------------|----------------------------------------|----------------------------------------|---------------------------------------|
-| 540                                   | 540                                    | 32                                     | 22.5                                  |
+| 180                                   | 180                                    | 11                                     | 7.5                                  |
 
-Nous avons donc en total de caratères utiliser par mois par services : 
+Nous avons donc un total de caratères utilisés par mois par fonctionnalité : 
+(ici nous muliplions la moyenne de caractères utlisés par fonctionnalité par la moyenne du nombre d'utilisation par fonctionnalité)
 
 | nombre total de caractères(questions)/mois | nombre total de réponses générées/mois | nombre total de documents ingérés/mois | nombre total de rapports générés/mois |
 |--------------------------------------------|----------------------------------------|----------------------------------------|---------------------------------------|
-| 385 020                                    | 522 720                                | 544 000                                | 208 125                               |
+| 42 840                                    | 58 140                                | 62 337                                | 23 130                               |
 
 ---
 
 ## **Revenu estimer**
 
-On peux donc estimer via les rubriques précedantes les nombre d'utilisation est donc le nombre de caractère estimer utiliser par mois par typlologie de users.
+Ici il est primordiale de noter que les bénéfices de ComptaCompanion sont uniquement basés sur la marge faite par le'utilisations des fonctionalités 
+Nous avons donc fixer des tarifications 100 fois suppérieur aux coût réel des réponses générés.
 
-par mois 
+|Fonctionnalité|Cout réel (par 1M token)|Cout réel (par caractères)|Cout plateforme (par 1M token)|Cout plateforme (par caractères)|
+|---|---|---|---|---|
+|Questions|0.59$|14.75e-8$|59$|14.75e-6$|
+|réponse|0.79$|19.75e-8$|79$|19.75e-6$|
+|Ingestions de documents|0.10$|2.5e-8$|10$|2.5e-6$|
+|Générations de rapports|0.79$|19.75e-8$|79$|19.75e-6$|
 
-beginner | question/reponse : 46 400 | documents ingéré : 4 000 | rapport généré : 1 500 | total : 51900
-intermediate | question/reponse : 58 720 | documents ingéré : 33 750 | rapport généré : 15 000 | total : 107 470
-pro | question/reponse : 307 200 | documents ingéré : 236 250 | rapport généré : 90 000 | total : 633 450
+> Ici le coût de la génération de rapport est égale au coût d'une réponse, c'est à dire que l'on néglige les 1 à 10 phrases nécéssaire à la spécifications du contenu du rapport en comparaison des plusieurs page générées  
 
+**Cout réel :**
+
+Ce qui nous donne en multipliant le prix par l'utilisation estimer en nombre de caractères par fonctionnnalité par mois, le cout réel moyen d'un utilisateur par mois.
+
+
+(14.75 × 10⁻⁸ × 42 840) + (19.75 × 10⁻⁸ × 58 140) + (2.5 × 10⁻⁸ × 62 337) + (19.75 × 10⁻⁸ × 23 130) = **0.0239 $**
+
+
+**Cout plateforme :**
+
+Ce qui nous donne en multipliant le prix par l'utilisation estimer en nombre de caractères par fonctionnnalité par mois, le cout réel d'un utilisateur par mois.
+
+((14.75e-6$)x42 840)+((19.75e-6$)x58 140)+((2.5e-6$)x62 337)+((19.75e-6$)x23 130) = 2.39$
+
+((14.75 × 10⁻⁶ $) × 42 840) + ((19.75 × 10⁻⁶ $) × 58 140) + ((2.5 × 10⁻⁶ $) × 62 337) + ((19.75 × 10⁻⁶ $) × 23 130) = **2.39 $**
+
+
+
+**Revenus généré :**
+
+On a donc par la différence entre notre coût réel et le cout de la plateforme les revenus moyen généré par un utilisateur par mois.
+
+Revenus = 2.39$ - 0.0239$ = **2.3661$** = **2.08€**
+
+> Ici le taux de convertion Dollar américain vers euro est de 0.88.
+
+---
+
+## Seuil de rentabilité
+
+### Composantes clés
+
+| Élément                      | Description                                                        | Valeur |
+|------------------------------|--------------------------------------------------------------------|--------|
+| Charges fixes                | Coûts fixes totaux (par exemple : loyers, salaires fixes)         |   36.39$ =  32.02€   |
+| Prix de vente unitaire       | Prix de vente d'un produit ou service                              |  2.3661$ = 2.08€   |
+| Coût variable unitaire       | Coût variable pour produire une unité (ex : matières premières)   | aucun     |
+
+> Ici le taux de convertion Dollar américain vers euro est de 0.88.
+
+> Dans notre cas de figure nous excluons de potentiel salaire ou frais de location du bureau ici l'objectif est de comprendre le nombre de clients nécéssaire pour atteindre un seuil de rentabilité par rapport à nos frais de matériel (server et services)
+
+### Calcul
+
+Pour déterminer le nombre de client nécessaires pour atteindre le seuil de rentabilité, on utilise la formule suivante :
+
+$$
+\text{Seuil} = \frac{\text{Charges fixes}}{\text{Prix de vente unitaire} - \text{Coût variable unitaire}}
+$$
+
+$$
+\text{Seuil} = \left( \frac{2.3661}{36.39} \right) = 6,50\%
+$$
 
 ---
 
@@ -281,8 +352,8 @@ pro | question/reponse : 307 200 | documents ingéré : 236 250 | rapport gén
 
 | Élément | Description | valeur |
 | --- | --- | --- |
-| Coûts initiaux | Dépenses totales | 
-| Revenus | Chiffre d’affaires ou bénéfices directs générés. |
+| Coûts initiaux | Dépenses totales | 36.39$ |
+| Revenus | Chiffre d’affaires ou bénéfices directs générés. | 2.39$ |
 | Gain net | Revenus – Coûts (y compris coûts indirects). |
 
 ---
@@ -294,14 +365,7 @@ $$
 $$
 
 $$
-\text{ROI} = \left( \frac{\text{Gain net}}{\text{Coût initial}} \right) \times 100 = \left( \frac{\text{Revenus} - \text{Coûts}}{\text{Coûts}} \right) \times 100
+\text{ROI} = \left( \frac{2.3661}{36.39} \right) \times 100 = 6,50\%
 $$
 
 ---
-
-## Seuil de rentabilité
-
-Pour déterminer le nombre d'unités nécessaires pour atteindre le seuil de rentabilité, on utilise la formule suivante :
-$$
-\text{Seuil} = \frac{\text{Charges fixes}}{\text{Prix de vente unitaire} - \text{Coût variable unitaire}}
-$$

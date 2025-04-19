@@ -95,8 +95,6 @@ Voici les informations de nos modèles dans cet abonnement :
 | --- | --- | --- | ---  |
 | llama-3.3-70b-versatile | 0.59$ | 0.79$ | 128k
 
-Le budget moyen est de ...
-
 ---
 
 ### **OpenAi**
@@ -108,8 +106,6 @@ Les abonnements possibles :
 | modèle | Prix par 1M Token |
 | --- | --- |
 | text-embedding-ada-002 | 0.10$ |
-
-Le budget moyen est de ...
 
 ---
 
