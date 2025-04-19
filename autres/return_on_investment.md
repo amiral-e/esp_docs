@@ -302,9 +302,8 @@ Ce qui nous donne en multipliant le prix par l'utilisation estimer en nombre de 
 
 Ce qui nous donne en multipliant le prix par l'utilisation estimer en nombre de caractères par fonctionnnalité par mois, le cout réel d'un utilisateur par mois.
 
-((14.75e-6$)x42 840)+((19.75e-6$)x58 140)+((2.5e-6$)x62 337)+((19.75e-6$)x23 130) = 2.39$
 
-((14.75 × 10⁻⁶ $) × 42 840) + ((19.75 × 10⁻⁶ $) × 58 140) + ((2.5 × 10⁻⁶ $) × 62 337) + ((19.75 × 10⁻⁶ $) × 23 130) = **2.39 $**
+((14.75 × 10⁻⁶ $) × 42 840) + ((19.75 × 10⁻⁶ $) × 58 140) + ((2.5 × 10⁻⁶ $) × 62 337) + ((19.75 × 10⁻⁶ $) × 23 130) = **2.39 $**
 
 
 
@@ -312,7 +311,7 @@ Ce qui nous donne en multipliant le prix par l'utilisation estimer en nombre de 
 
 On a donc par la différence entre notre coût réel et le cout de la plateforme les revenus moyen généré par un utilisateur par mois.
 
-Revenus = 2.39$ - 0.0239$ = **2.3661$** = **2.08€**
+**Revenus** = 2.39$ - 0.0239$ = **2.3661$** = **2.08€**
 
 > Ici le taux de convertion Dollar américain vers euro est de 0.88.
 
@@ -324,7 +323,7 @@ Revenus = 2.39$ - 0.0239$ = **2.3661$** = **2.08€**
 
 | Élément                      | Description                                                        | Valeur |
 |------------------------------|--------------------------------------------------------------------|--------|
-| Charges fixes                | Coûts fixes totaux (par exemple : loyers, salaires fixes)         |   36.39$ =  32.02€   |
+| Charges fixes                | Coûts fixes totaux (par exemple : (hebergement, base de données))         |   36.39$ =  32.02€   |
 | Prix de vente unitaire       | Prix de vente d'un produit ou service                              |  2.3661$ = 2.08€   |
 | Coût variable unitaire       | Coût variable pour produire une unité (ex : matières premières)   | aucun     |
 
@@ -334,27 +333,42 @@ Revenus = 2.39$ - 0.0239$ = **2.3661$** = **2.08€**
 
 ### Calcul
 
-Pour déterminer le nombre de client nécessaires pour atteindre le seuil de rentabilité, on utilise la formule suivante :
+Pour déterminer le nombre de client nécessaires pour atteindre le seuil de rentabilité (quantité à partir de laquel on génère des bénéfices), on utilise la formule suivante :
 
+>Ici dans le prix de vente unitaire il ne faut pas négliger nos coût liée au paiement qui sont 1.5% + 0.25€ par transaction via notre application de paiement stripe (voir [Buget](../cahier_des_charges/pages/Budget.md))
+
+On a donc : 
+
+$$
+\text{Prix de vente unitaire} = (2.08€ \times 0.985) - 0.25€ = \mathbf{1.80€}
+$$
+
+Ce qui nous donne : 
 $$
 \text{Seuil} = \frac{\text{Charges fixes}}{\text{Prix de vente unitaire} - \text{Coût variable unitaire}}
 $$
 
 $$
-\text{Seuil} = \left( \frac{2.3661}{36.39} \right) = 6,50\%
+\text{Seuil} = \left( \frac{32.02}{1.80} \right) = 17,78
 $$
+
+**Il nous faut donc 18 client pour atteindre notre seuil de rentabilité**
 
 ---
 
 ## Retour sur investissement 
 
+Ici pour le ROI il serait possible de déterminer un nombre de client et de calculer le retour sur investissement par le revenus généré pour cette quantité, mais ce n'est pas ce que nous allons faire.
+Sachant que le retour sur investissement dépend du nombre de client (avec une utilisation moyenne de la plateforme estimer à 1.80€ net par client) nous allons calculer le ROI par client.
+**Cette méthode nous permet d'estimer le ROI en pourcetage et de le multiplie par le nombre de client pour avoir directement un ROI donné pour un nombre de client donné.**
+
 ### Composantes clés
 
 | Élément | Description | valeur |
 | --- | --- | --- |
-| Coûts initiaux | Dépenses totales | 36.39$ |
-| Revenus | Chiffre d’affaires ou bénéfices directs générés. | 2.39$ |
-| Gain net | Revenus – Coûts (y compris coûts indirects). |
+| Coûts initiaux | Dépenses totales | 32.02€ |
+| Revenus | Chiffre d’affaires ou bénéfices directs générés. | 2.08€ |
+| Gain net | Revenus – Coûts (y compris coûts indirects). | 1.80€|
 
 ---
 
@@ -365,7 +379,55 @@ $$
 $$
 
 $$
-\text{ROI} = \left( \frac{2.3661}{36.39} \right) \times 100 = 6,50\%
+\text{ROI} = \left( \frac{1.80}{32.02} \right) \times 100 = 5.62\%
+$$
+
+**Nous avons donc un retour sur investissement de 5.62% par client une fois le seuil de rentabilité atteint.**
+
+**exemple : pour 100 clients** 
+$$
+\text{ROI} = \left( \frac{180}{32.02} \right) \times 100 = 562\%
+$$
+
+**exemple : pour 2 clients**
+$$
+\text{ROI} = \left( \frac{3.60}{32.02} \right) \times 100 = 11.24\%
 $$
 
 ---
+
+## Conclusion 
+
+On peut conclure en remarquant que pour un tarif d'utilisation estimer **2.02€** par utilisateur par mois, **ComptaCompanion** est une plateforme concurrentielle par rapport au marché dans lequel elle s'inscrit (voir le chapitre "étude de marché").
+De plus, le seuil de rentabilité est totalement accessible **18 clients** avec un retour sur investissement par client très élevé à partir du 19e client.   
+
+---
+
+## Annexes
+
+### Camille – Étudiante en droit
+
+| Fonctionnalité              | Source / Étude                                                         | Justification chiffrée                                                                 | URL                                              |
+|-----------------------------|------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|--------------------------------------------------|
+| Q&A pédagogiques            | **Observatoire de la Vie Étudiante (OVE) – Enquête sur les conditions de vie des étudiant·e·s** | Les étudiants utilisent en moyenne **4 ressources numériques d’apprentissage par semaine**. | [https://www.ove-national.education.fr/enquete/enquete-conditions-de-vie/](https://www.ove-national.education.fr/enquete/enquete-conditions-de-vie/) |
+| Glossaire & définitions     | **OpenClassrooms / Étudiants.fr**                                      | Les ressources les plus consultées dans les cours de droit fiscal sont les **lexiques et FAQ**. | [https://openclassrooms.com/fr/courses/](https://openclassrooms.com/fr/courses/) |
+| Documents à comprendre      | **Études Ouest-France Étudiants (2022)**                               | Les étudiants en droit citent les **documents administratifs** comme un point d’incompréhension majeur. | [https://www.ouest-france.fr/education/](https://www.ouest-france.fr/education/) |
+
+---
+
+### Mehdi – Auto-entrepreneur
+
+| Fonctionnalité                  | Source / Étude                                                            | Justification chiffrée                                                                 | URL                                              |
+|----------------------------------|---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|--------------------------------------------------|
+| Vérif. factures / URSSAF         | **QuickBooks France, Pennylane FAQ, Bpifrance Création**                  | Auto-entrepreneurs effectuent **1–2 
+| Questions sur statuts fiscaux    | **Forum auto-entrepreneurs + simulateurs BGE, Adie**                      | En période de déclaration ou seuil, les recherches explosent → **pic mensuel x2 à x3**. | [https://www.bge.asso.fr/auto-entrepreneur/](https://www.bge.asso.fr/auto-entrepreneur/) |
+
+---
+
+### Sophie – Employée en PME
+
+| Fonctionnalité                        | Source / Étude                                                              | Justification chiffrée                                                                 | URL                                              |
+|---------------------------------------|-----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|--------------------------------------------------|
+| Analyse de documents                  | **Benchmark outils ERP (SAP, EBP, Sage PME)**                               | Tâches documentaires répétées **3 à 5 fois/semaine** dans la majorité des services.     | [https://www.sage.com/fr-fr/](https://www.sage.com/fr-fr/) |
+| Génération de rapports                | **Gartner Finance Automation Survey (2023)**                                | 68 % des collaborateurs PME génèrent **2 à 3 rapports synthétiques** par semaine.       | [https://www.gartner.com/en/insights/finance-automation](https://www.gartner.com/en/insights/finance-automation) |
+
