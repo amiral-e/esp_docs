@@ -121,6 +121,23 @@
 
 ## **Cycle 18 (17 mars - 6 avril 2025)**
 
-## **Cycle 19 (7 avril - 28 avril 2025)**
+- Implementation de Stripe dans le front
+- Piplines de TU front
+- SonarQube
+- Menu Admin
+- Choix connaissances frontend
+- Usage et statistiques du user
 
-- export de rapport
+## **Cycle 18 (7 avril - 27 avril 2025)**
+
+- Documentation Frontend
+- Tests e2e
+- Visualisation de rapports
+- Génération de rapports
+- Niveau de connaissance
+- Export de rapports
+- Apperçus de l'application
+- Questions prédéfinies
+- Données bancaires
+- Gestion Publications
+- Finalisation des TU backend
