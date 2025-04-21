@@ -274,14 +274,16 @@ Nous avons donc un total de caratères utilisés par mois par fonctionnalité :
 |--------------------------------------------|----------------------------------------|----------------------------------------|---------------------------------------|
 | 42 840                                    | 58 140                                | 62 337                                | 23 130                               |
 
+
+
 ---
 
-## **Revenu estimer**
+## **Revenu estimé**
 
 Ici il est primordiale de noter que les bénéfices de ComptaCompanion sont uniquement basés sur la marge faite par le'utilisations des fonctionalités 
 Nous avons donc fixer des tarifications 100 fois suppérieur aux coût réel des réponses générés.
 
-|Fonctionnalité|Cout réel (par 1M token)|Cout réel (par caractères)|Cout plateforme (par 1M token)|Cout plateforme (par caractères)|
+|Fonctionnalité|Cout réel (par 1M token)|Cout réel (par caractères)|Cout utilisateur (par 1M token)|Cout utilisateur (par caractères)|
 |---|---|---|---|---|
 |Questions|0.59$|14.75e-8$|59$|14.75e-6$|
 |réponse|0.79$|19.75e-8$|79$|19.75e-6$|
@@ -290,12 +292,59 @@ Nous avons donc fixer des tarifications 100 fois suppérieur aux coût réel des
 
 > Ici le coût de la génération de rapport est égale au coût d'une réponse, c'est à dire que l'on néglige les 1 à 10 phrases nécéssaire à la spécifications du contenu du rapport en comparaison des plusieurs page générées  
 
+Le cout réel de l'utilisation des composants par les differentes fonctionnalitées sont les suivantes :
+
+|Fonctionnalité|Entrée|Sortie|Traitement Document|Recherche|
+|---|---|---|---|---|
+|Chat|0.59$|0.79$|0|0|
+|Chat Collection(s)|0.59$|0.79$|0|0.05$|
+|Ingestion Document|0|0|0.10$|0|
+|Génération Rapport|0|0.79$|0|0.05$|
+
+On nottera ici que les tarification sont sur une référence de 1M de token soit 4 000 000 de caractères.
+
+> *La génération de rapport envoie les documents fournis par l'utilisateur via l'Entrée. 
+
+Le cout plateforme facturer à l'utilisateur pour l'utilisation des composants par les differentes fonctionnalitées sont les suivantes :
+
+|Fonctionnalité|Entrée|Sortie|Traitement Document|Recherche|
+|---|---|---|---|---|
+|Chat|0.1475$|0.1975$|0|0|
+|Chat Collection(s)|0.1475$|0.1975$|0|0.05$|
+|Ingestion Document|0|0|0.025$|0|
+|Génération Rapport|0|0.1975$|0|0.05$|
+
+On nottera ici que les tarifications sont sur une référence de 10k caractères.
+
+> *La génération de rapport envoie les documents fournis par l'utilisateur via l'Entrée. 
+
 **Cout réel :**
 
-Ce qui nous donne en multipliant le prix par l'utilisation estimer en nombre de caractères par fonctionnnalité par mois, le cout réel moyen d'un utilisateur par mois.
+Ce qui nous donne en multipliant le prix par l'utilisation estimer en nombre de caractères par fonctionnnalité par mois **pour un utilisateur**, le cout réel moyen d'un utilisateur par mois.
 
+Ici il est important de noter que le chat collections represente la moitié de nos questions réponse mais intègre une recheche (search) dans le document pour emettre une réponse elle est donc inclus dans la tarification.
 
-(14.75 × 10⁻⁸ × 42 840) + (19.75 × 10⁻⁸ × 58 140) + (2.5 × 10⁻⁸ × 62 337) + (19.75 × 10⁻⁸ × 23 130) = **0.0239 $**
+A noter ici que les quantité de caractère sont convertie en unité 10k caractères.
+
+Nous avons donc comme variable : 
+
+- **Chat** = (Input_prix x nb_input + output_prix x nb_output) / 2
+
+>(4.280 x 0.001475$ + 5.8140 x 0.001975$) / 2 = 0.0089$
+
+- **chat collection** = ((Input_prix x nb_input + output_prix x nb_output) + (prix_search x (nb_input + nb_output)) / 2
+
+>((4.280 x 0.001475$ + 5.8140 x 0.001975$) + (0.05$ x 10.09)) / 2 = 0.26$
+
+- **ingestion** = prix_traitement x nb_docs
+
+>6.2337 x 0.001975$ = 0.0123$
+
+- **rapport** = (output_prix + prix_search) x nb_rapport
+
+>(0.001975$ + 0.05$) x 2.3130 = 0.12$
+
+total = 0.0089$ + 0.26$ + 0.0123$ + 0.12$ = 0.40$
 
 
 **Cout plateforme :**
@@ -303,15 +352,34 @@ Ce qui nous donne en multipliant le prix par l'utilisation estimer en nombre de 
 Ce qui nous donne en multipliant le prix par l'utilisation estimer en nombre de caractères par fonctionnnalité par mois, le cout réel d'un utilisateur par mois.
 
 
-((14.75 × 10⁻⁶ $) × 42 840) + ((19.75 × 10⁻⁶ $) × 58 140) + ((2.5 × 10⁻⁶ $) × 62 337) + ((19.75 × 10⁻⁶ $) × 23 130) = **2.39 $**
+A noter ici que les quantité de caractère sont convertie en unité 10k caractères.
 
+Nous avons donc comme variable : 
+
+- **Chat** = (Input_prix x nb_input + output_prix x nb_output) / 2
+
+>(4.280 x 0.1475$ + 5.8140 x 0.1975$) / 2 = 0.89$
+
+- **chat collection** = ((Input_prix x nb_input + output_prix x nb_output) + (prix_search x (nb_input + nb_output)) / 2
+
+>((4.280 x 0.1475$ + 5.8140 x 0.1975$) + (0.05$ x 10.09)) / 2 = 1.14$
+
+- **ingestion** = prix_traitement x nb_docs
+
+>6.2337 x 0.1975$ = 1.23$
+
+- **rapport** = (output_prix + prix_search) x nb_rapport
+
+>(0.1975$ + 0.05$) x 2.3130 = 0.57$
+
+total = 0.89$ + 1.14$ + 1.23$ + 0.57$ = **3,83 $**
 
 
 **Revenus généré :**
 
 On a donc par la différence entre notre coût réel et le cout de la plateforme les revenus moyen généré par un utilisateur par mois.
 
-**Revenus** = 2.39$ - 0.0239$ = **2.3661$** = **2.08€**
+**Revenus** = 3.83$ - 0.40$ = **3.43$** = **2.74€**
 
 > Ici le taux de convertion Dollar américain vers euro est de 0.88.
 
@@ -324,7 +392,7 @@ On a donc par la différence entre notre coût réel et le cout de la plateforme
 | Élément                      | Description                                                        | Valeur |
 |------------------------------|--------------------------------------------------------------------|--------|
 | Charges fixes                | Coûts fixes totaux (par exemple : (hebergement, base de données))         |   36.39$ =  32.02€   |
-| Prix de vente unitaire       | Prix de vente d'un produit ou service                              |  2.3661$ = 2.08€   |
+| Prix de vente unitaire       | Prix de vente d'un produit ou service                              |  3.83$ = 2.74€   |
 | Coût variable unitaire       | Coût variable pour produire une unité (ex : matières premières)   | aucun     |
 
 > Ici le taux de convertion Dollar américain vers euro est de 0.88.
@@ -340,7 +408,7 @@ Pour déterminer le nombre de client nécessaires pour atteindre le seuil de ren
 On a donc : 
 
 $$
-\text{Prix de vente unitaire} = (2.08€ \times 0.985) - 0.25€ = \mathbf{1.80€}
+\text{Prix de vente unitaire} = (2.74€ \times 0.985) - 0.25€ = \mathbf{2.45€}
 $$
 
 Ce qui nous donne : 
@@ -349,10 +417,10 @@ $$
 $$
 
 $$
-\text{Seuil} = \left( \frac{32.02}{1.80} \right) = 17,78
+\text{Seuil} = \left( \frac{32.02}{2.45} \right) = 13.06
 $$
 
-**Il nous faut donc 18 client pour atteindre notre seuil de rentabilité**
+**Il nous faut donc 14 clients pour atteindre notre seuil de rentabilité**
 
 ---
 
@@ -367,8 +435,8 @@ Sachant que le retour sur investissement dépend du nombre de client (avec une u
 | Élément | Description | valeur |
 | --- | --- | --- |
 | Coûts initiaux | Dépenses totales | 32.02€ |
-| Revenus | Chiffre d’affaires ou bénéfices directs générés. | 2.08€ |
-| Gain net | Revenus – Coûts (y compris coûts indirects). | 1.80€|
+| Revenus | Chiffre d’affaires ou bénéfices directs générés. | 2.74€ |
+| Gain net | Revenus – Coûts (y compris coûts indirects). | 2.45 €|
 
 ---
 
@@ -379,19 +447,19 @@ $$
 $$
 
 $$
-\text{ROI} = \left( \frac{1.80}{32.02} \right) \times 100 = 5.62\%
+\text{ROI} = \left( \frac{2.45}{32.02} \right) \times 100 = 7.65\%
 $$
 
 **Nous avons donc un retour sur investissement de 5.62% par client une fois le seuil de rentabilité atteint.**
 
 **exemple : pour 100 clients** 
 $$
-\text{ROI} = \left( \frac{180}{32.02} \right) \times 100 = 562\%
+\text{ROI} = \left( \frac{245}{32.02} \right) \times 100 = 765\%
 $$
 
 **exemple : pour 2 clients**
 $$
-\text{ROI} = \left( \frac{3.60}{32.02} \right) \times 100 = 11.24\%
+\text{ROI} = \left( \frac{4.90}{32.02} \right) \times 100 = 15.30\%
 $$
 
 ---
@@ -399,7 +467,7 @@ $$
 ## Conclusion 
 
 On peut conclure en remarquant que pour un tarif d'utilisation estimer **2.02€** par utilisateur par mois, **ComptaCompanion** est une plateforme concurrentielle par rapport au marché dans lequel elle s'inscrit (voir le chapitre "étude de marché").
-De plus, le seuil de rentabilité est totalement accessible **18 clients** avec un retour sur investissement par client très élevé à partir du 19e client.   
+De plus, le seuil de rentabilité est totalement accessible **14 clients** avec un retour sur investissement par client très élevé à partir du 19e client.   
 
 ---
 
@@ -419,7 +487,7 @@ De plus, le seuil de rentabilité est totalement accessible **18 clients** avec 
 
 | Fonctionnalité                  | Source / Étude                                                            | Justification chiffrée                                                                 | URL                                              |
 |----------------------------------|---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|--------------------------------------------------|
-| Vérif. factures / URSSAF         | **QuickBooks France, Pennylane FAQ, Bpifrance Création**                  | Auto-entrepreneurs effectuent **1–2 
+
 | Questions sur statuts fiscaux    | **Forum auto-entrepreneurs + simulateurs BGE, Adie**                      | En période de déclaration ou seuil, les recherches explosent → **pic mensuel x2 à x3**. | [https://www.bge.asso.fr/auto-entrepreneur/](https://www.bge.asso.fr/auto-entrepreneur/) |
 
 ---
