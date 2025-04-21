@@ -22,7 +22,7 @@ Ici nous allons definir trois persona qui sont trois typologie de client représ
   - Q&A pédagogiques illustrés avec des exemples
   - Glossaire juridique-comptable simplifié
   - Fiches synthétiques sur des notions clés (bilan, amortissements, comptes…)
-- **Niveau technique/comptable** : Débutante avec un bon raisonnement analytique
+- **Niveau technique/comptable** : Beginner
 
 
 ### Persona 2 : Mehdi — L’Auto-entrepreneur
@@ -35,7 +35,7 @@ Ici nous allons definir trois persona qui sont trois typologie de client représ
   - Explication de lignes comptables / seuils URSSAF
   - Vérification rapide de factures ou statuts fiscaux
   - Génération de mini-rapports ou fiches de suivi
-- **Niveau technique/comptable** : Intermédiaire
+- **Niveau technique/comptable** : Intermediate
 
 
 ### Persona 3 : Sophie — La Collaboratrice PME Opérationnelle
@@ -48,7 +48,7 @@ Ici nous allons definir trois persona qui sont trois typologie de client représ
   - Analyse de documents (bilan, factures, fiches de paie)
   - Génération de rapports synthétiques pour la direction
   - Automatisation des contrôles simples (TVA, échéances)
-- **Niveau technique/comptable** : Opérationnelle avancée (mais pas experte)
+- **Niveau technique/comptable** : Pro
 
 
 **Nos personas et leurs besoins :** 
@@ -283,13 +283,6 @@ Nous avons donc un total de caratères utilisés par mois par fonctionnalité :
 Ici il est primordiale de noter que les bénéfices de ComptaCompanion sont uniquement basés sur la marge faite par le'utilisations des fonctionalités 
 Nous avons donc fixer des tarifications 100 fois suppérieur aux coût réel des réponses générés.
 
-|Fonctionnalité|Cout réel (par 1M token)|Cout réel (par caractères)|Cout utilisateur (par 1M token)|Cout utilisateur (par caractères)|
-|---|---|---|---|---|
-|Questions|0.59$|14.75e-8$|59$|14.75e-6$|
-|réponse|0.79$|19.75e-8$|79$|19.75e-6$|
-|Ingestions de documents|0.10$|2.5e-8$|10$|2.5e-6$|
-|Générations de rapports|0.79$|19.75e-8$|79$|19.75e-6$|
-
 > Ici le coût de la génération de rapport est égale au coût d'une réponse, c'est à dire que l'on néglige les 1 à 10 phrases nécéssaire à la spécifications du contenu du rapport en comparaison des plusieurs page générées  
 
 Le cout réel de l'utilisation des composants par les differentes fonctionnalitées sont les suivantes :
@@ -324,7 +317,7 @@ Ce qui nous donne en multipliant le prix par l'utilisation estimer en nombre de 
 
 Ici il est important de noter que le chat collections represente la moitié de nos questions réponse mais intègre une recheche (search) dans le document pour emettre une réponse elle est donc inclus dans la tarification.
 
-A noter ici que les quantité de caractère sont convertie en unité 10k caractères.
+A noter ici que les quantité de caractère sont convertie en unité 10k caractères (1M token / 400).
 
 Nous avons donc comme variable : 
 
@@ -477,8 +470,7 @@ De plus, le seuil de rentabilité est totalement accessible **14 clients** avec 
 
 | Fonctionnalité              | Source / Étude                                                         | Justification chiffrée                                                                 | URL                                              |
 |-----------------------------|------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|--------------------------------------------------|
-| Q&A pédagogiques            | **Observatoire de la Vie Étudiante (OVE) – Enquête sur les conditions de vie des étudiant·e·s** | Les étudiants utilisent en moyenne **4 ressources numériques d’apprentissage par semaine**. | [https://www.ove-national.education.fr/enquete/enquete-conditions-de-vie/](https://www.ove-national.education.fr/enquete/enquete-conditions-de-vie/) |
-| Glossaire & définitions     | **OpenClassrooms / Étudiants.fr**                                      | Les ressources les plus consultées dans les cours de droit fiscal sont les **lexiques et FAQ**. | [https://openclassrooms.com/fr/courses/](https://openclassrooms.com/fr/courses/) |
+| Q&A pédagogiques            | **Observatoire de la Vie Étudiante (OVE) – Enquête sur les conditions de vie des étudiant·e·s** | Les étudiants utilisent en moyenne **4 ressources numériques d’apprentissage par semaine**. | [https://www.ove-national.education.fr/enquete/enquete-conditions-de-vie/](https://www.ove-national.education.fr/enquete/enquete-conditions-de-vie/) |  
 | Documents à comprendre      | **Études Ouest-France Étudiants (2022)**                               | Les étudiants en droit citent les **documents administratifs** comme un point d’incompréhension majeur. | [https://www.ouest-france.fr/education/](https://www.ouest-france.fr/education/) |
 
 ---
@@ -488,7 +480,7 @@ De plus, le seuil de rentabilité est totalement accessible **14 clients** avec 
 | Fonctionnalité                  | Source / Étude                                                            | Justification chiffrée                                                                 | URL                                              |
 |----------------------------------|---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|--------------------------------------------------|
 
-| Questions sur statuts fiscaux    | **Forum auto-entrepreneurs + simulateurs BGE, Adie**                      | En période de déclaration ou seuil, les recherches explosent → **pic mensuel x2 à x3**. | [https://www.bge.asso.fr/auto-entrepreneur/](https://www.bge.asso.fr/auto-entrepreneur/) |
+| Questions sur statuts fiscaux    | **Forum auto-entrepreneurs + simulateurs BGE, Adie**                      | En période de déclaration ou seuil, les recherches explosent → **pic mensuel x2 à x3**. | [https://www.bge.asso.fr](https://www.bge.asso.fr/auto-entrepreneur/) |
 
 ---
 
